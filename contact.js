@@ -6,7 +6,7 @@ require('dotenv').config ();
 app.get('/',(req,res)=>res.send({
     msg:"sent using post"
 }));
-app.post('/',(req,res) =>{ 
+app.post('/mail',(req,res) =>{ 
     const{name,email,message} =req.body;
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -26,8 +26,7 @@ app.post('/',(req,res) =>{
         text: `
         Email:${email}
         Name: ${name}
-        Message:
-        ${message}
+        Message: ${message}
 
 
         
