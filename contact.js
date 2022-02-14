@@ -3,10 +3,8 @@ const app = express.Router();
 const nodemailer = require('nodemailer');
 require('dotenv').config ();
 
-app.get('/',(req,res)=>res.send({
-    msg:"sent using post"
-}));
-app.post('/mail',(req,res) =>{ 
+
+app.post('/',(req,res) =>{ 
     const{name,email,message} =req.body;
     let transporter = nodemailer.createTransport({
         service: 'gmail',
