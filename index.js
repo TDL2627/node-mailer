@@ -1,7 +1,6 @@
 const express = require("express");
 const cors =require("cors");
 const contactRoutes = require("./contact");
-const mailRoutes = require("./mail");
 const app =express();
 app.use(express.json());
 app.use(cors());
